@@ -11,12 +11,12 @@ Navegador dedicado para abrir aparelhos da rede dos clientes. Você escolhe o cl
 
 **Manual de instalação passo a passo (Windows, Ubuntu/Debian e macOS): [INSTALAR.md](INSTALAR.md)**
 
-Versão atual: **2.0.1**. As versões ficam em [Releases](https://github.com/fcarvalhosa17/Tun-Client/releases/latest).
+Versão atual: **2.0.2**. As versões ficam em [Releases](https://github.com/fcarvalhosa17/Tun-Client/releases/latest).
 
 | Sistema | Arquivo |
 |---|---|
-| Windows 10/11 | [tunel-clientes-2.0.1-windows-setup.exe](https://github.com/fcarvalhosa17/Tun-Client/releases/download/v2.0.1/tunel-clientes-2.0.1-windows-setup.exe) |
-| Linux (Debian/Ubuntu) e macOS | [tunel-clientes-2.0.1-linux-macos.zip](https://github.com/fcarvalhosa17/Tun-Client/releases/download/v2.0.1/tunel-clientes-2.0.1-linux-macos.zip) |
+| Windows 10/11 | [tunel-clientes-2.0.2-windows-setup.exe](https://github.com/fcarvalhosa17/Tun-Client/releases/download/v2.0.2/tunel-clientes-2.0.2-windows-setup.exe) |
+| Linux (Debian/Ubuntu) e macOS | [tunel-clientes-2.0.2-linux-macos.zip](https://github.com/fcarvalhosa17/Tun-Client/releases/download/v2.0.2/tunel-clientes-2.0.2-linux-macos.zip) |
 
 ## Instalar
 

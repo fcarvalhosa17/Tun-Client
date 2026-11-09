@@ -4,7 +4,7 @@
 #   Mac:   curl -fsSL https://raw.githubusercontent.com/fcarvalhosa17/Tun-Client/main/instalar.sh | sh
 # Para remover, acrescente:  | sh -s -- --remover
 set -e
-VERSAO=2.0.1
+VERSAO=2.0.2
 URL="https://github.com/fcarvalhosa17/Tun-Client/releases/download/v$VERSAO/tunel-clientes-$VERSAO-linux-macos.zip"
 
 if ! command -v python3 >/dev/null 2>&1; then

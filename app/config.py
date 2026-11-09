@@ -185,6 +185,8 @@ def _cliente_valido(d):
         c["auth"] = txt("auth")
     redes = []
     for s in d.get("subnets") or []:
+        if not str(s).strip():  # coluna vazia na planilha / linha em branco no formulario
+            continue
         try:
             redes.append(str(ipaddress.IPv4Network(str(s).strip(), strict=False)))
         except ValueError:

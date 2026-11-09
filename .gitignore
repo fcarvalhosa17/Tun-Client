@@ -25,3 +25,6 @@ host.log.*
 
 # notas internas dos agentes
 .handoff/
+
+# planilhas de clientes (IPs internos): nunca no repositorio
+*.csv
