@@ -9,7 +9,7 @@ import shutil
 import subprocess
 import sys
 
-VERSAO = "2.0.0"
+VERSAO = "2.0.1"
 NOME = "Tunel Clientes"
 RAIZ = os.path.dirname(os.path.abspath(__file__))
 APP, DIST, BUILD = (os.path.join(RAIZ, p) for p in ("app", "dist", "build"))

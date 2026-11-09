@@ -159,7 +159,7 @@ def atalho_mac():
   <key>CFBundleExecutable</key><string>tunel-clientes</string>
   <key>CFBundleIconFile</key><string>icone</string>
   <key>CFBundlePackageType</key><string>APPL</string>
-  <key>CFBundleShortVersionString</key><string>2.0.0</string>
+  <key>CFBundleShortVersionString</key><string>2.0.1</string>
   <key>NSHighResolutionCapable</key><true/>
 </dict>
 </plist>

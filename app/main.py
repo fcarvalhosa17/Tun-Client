@@ -35,12 +35,17 @@ def main():
         "--no-pings",
     ])
 
+    from PySide6.QtCore import QLibraryInfo, QLocale, QTranslator
     from PySide6.QtGui import QIcon
     from PySide6.QtWidgets import QApplication
 
     from janela import Janela
 
     app = QApplication(sys.argv)
+    # botoes padrao do Qt (Salvar, Cancelar, Sim, Nao...) em portugues
+    traducao = QTranslator(app)
+    if traducao.load(QLocale("pt_BR"), "qtbase", "_", QLibraryInfo.path(QLibraryInfo.LibraryPath.TranslationsPath)):
+        app.installTranslator(traducao)
     app.setApplicationName("Tunel Clientes")
     app.setDesktopFileName("tunel-clientes")  # Linux: liga a janela ao atalho (icone certo na barra)
     app.setWindowIcon(QIcon(_recurso("icone.png")))

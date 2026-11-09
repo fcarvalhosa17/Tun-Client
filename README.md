@@ -9,12 +9,14 @@ Navegador dedicado para abrir aparelhos da rede dos clientes. Você escolhe o cl
 
 ## Baixar
 
-Versão atual: **2.0.0**. As versões ficam em [Releases](https://github.com/fcarvalhosa17/Tun-Client/releases/latest).
+**Manual de instalação passo a passo (Windows, Ubuntu/Debian e macOS): [INSTALAR.md](INSTALAR.md)**
+
+Versão atual: **2.0.1**. As versões ficam em [Releases](https://github.com/fcarvalhosa17/Tun-Client/releases/latest).
 
 | Sistema | Arquivo |
 |---|---|
-| Windows 10/11 | [tunel-clientes-2.0.0-windows-setup.exe](https://github.com/fcarvalhosa17/Tun-Client/releases/download/v2.0.0/tunel-clientes-2.0.0-windows-setup.exe) |
-| Linux (Debian/Ubuntu) e macOS | [tunel-clientes-2.0.0-linux-macos.zip](https://github.com/fcarvalhosa17/Tun-Client/releases/download/v2.0.0/tunel-clientes-2.0.0-linux-macos.zip) |
+| Windows 10/11 | [tunel-clientes-2.0.1-windows-setup.exe](https://github.com/fcarvalhosa17/Tun-Client/releases/download/v2.0.1/tunel-clientes-2.0.1-windows-setup.exe) |
+| Linux (Debian/Ubuntu) e macOS | [tunel-clientes-2.0.1-linux-macos.zip](https://github.com/fcarvalhosa17/Tun-Client/releases/download/v2.0.1/tunel-clientes-2.0.1-linux-macos.zip) |
 
 ## Instalar
 
@@ -26,12 +28,16 @@ Baixe e rode `tunel-clientes-<versão>-windows-setup.exe`. Não pede administrad
 
 Use o `tunel-clientes-<versão>-linux-macos.zip`. Ele traz o app e um instalador em Python que monta tudo na própria máquina, só para o seu usuário:
 
+Com um comando só (o mesmo comando atualiza):
+
 ```
-curl -LO https://github.com/fcarvalhosa17/Tun-Client/releases/download/v2.0.0/tunel-clientes-2.0.0-linux-macos.zip
-unzip tunel-clientes-2.0.0-linux-macos.zip
-cd tunel-clientes-2.0.0
-python3 instalar.py
+# Ubuntu/Debian
+wget -qO- https://raw.githubusercontent.com/fcarvalhosa17/Tun-Client/main/instalar.sh | sh
+# macOS
+curl -fsSL https://raw.githubusercontent.com/fcarvalhosa17/Tun-Client/main/instalar.sh | sh
 ```
+
+Ou manualmente: baixe o zip, descompacte e rode `python3 instalar.py` dentro da pasta.
 
 - **Linux:**
   - O instalador confere as bibliotecas do sistema que o motor web precisa. Se faltar alguma, ele pergunta antes de instalar com `sudo apt-get`, e para isso pede a sua senha do Linux.
@@ -145,7 +151,7 @@ python build.py
   - `dist/tunel-clientes-<versão>-linux-macos.zip`
 - **Em qualquer sistema**, `python build.py --so-zip` gera só o zip de Linux e macOS.
 
-A versão fica em `build.py` e em `instalar.py`.
+A versão fica em `build.py`, `instalar.py`, `instalar.sh` e nos links do README.
 
 ## Estrutura
 
@@ -163,5 +169,7 @@ app/
   config.py      clientes.json, pasta de dados por sistema, cofre de senhas
 build.py         setup do Windows (PyInstaller + Inno) e zip de Linux/macOS
 instalar.py      instalador de Linux e macOS (só biblioteca padrão)
+instalar.sh      baixa a versão e roda o instalar.py (instalação em 1 comando)
+INSTALAR.md      manual de instalação passo a passo
 installer/windows.iss
 ```
