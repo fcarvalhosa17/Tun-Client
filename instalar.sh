@@ -26,5 +26,9 @@ else
 fi
 python3 -m zipfile -e "$TMP/app.zip" "$TMP"
 cd "$TMP/tunel-clientes-$VERSAO"
-# o script chega pelo pipe: as perguntas do instalador leem do teclado
-python3 instalar.py "$@" < /dev/tty
+# o script chega pelo pipe: as perguntas do instalador leem do teclado (se houver um terminal)
+if ( : < /dev/tty ) 2>/dev/null; then
+  python3 instalar.py "$@" < /dev/tty
+else
+  python3 instalar.py "$@"
+fi
