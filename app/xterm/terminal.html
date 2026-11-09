@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="xterm.css">
+<style>
+  html, body { margin: 0; height: 100%; background: #000; overflow: hidden; }
+  #t { height: 100%; padding: 4px; box-sizing: border-box; }
+</style>
+</head>
+<body>
+<div id="t"></div>
+<script src="xterm.js"></script>
+<script src="addon-fit.js"></script>
+<script src="qrc:///qtwebchannel/qwebchannel.js"></script>
+<script>
+  "use strict";
+  const term = new Terminal({
+    cursorBlink: true,
+    scrollback: 5000,
+    fontSize: 14,
+    fontFamily: 'Consolas, "Cascadia Mono", "DejaVu Sans Mono", Menlo, monospace',
+  });
+  const fit = new FitAddon.FitAddon();
+  term.loadAddon(fit);
+  const area = document.getElementById("t");
+  term.open(area);
+  term.focus();
+
+  new QWebChannel(qt.webChannelTransport, (canal) => {
+    const ponte = canal.objects.ponte;
+    ponte.chegou.connect((texto) => term.write(texto));
+    term.onData((d) => ponte.enviar(d));
+    // aba escondida mede 0: so ajusta com medida plausivel, e avisa o servidor (NAWS)
+    const ajustar = () => {
+      const d = fit.proposeDimensions();
+      if (!d || d.cols < 20 || d.rows < 5) return;
+      fit.fit();
+      ponte.redimensionar(term.cols, term.rows);
+    };
+    new ResizeObserver(ajustar).observe(area);
+    ajustar();
+    ponte.pronto();
+  });
+</script>
+</body>
+</html>

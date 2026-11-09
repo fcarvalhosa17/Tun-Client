@@ -1,0 +1,27 @@
+# build
+dist/
+build/
+*.spec
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# segredos / chaves privadas (inclui a chave de assinatura da extensao)
+*.pem
+*.key
+extension-key*
+key.pem
+id_rsa
+id_ed25519
+id_ecdsa
+*.ppk
+
+# dados reais do usuario (so o .example.json vai pro repo)
+clientes.json
+known_hosts
+host.log
+host.log.*
+
+# notas internas dos agentes
+.handoff/
