@@ -7,19 +7,29 @@ Navegador dedicado para abrir aparelhos da rede dos clientes. Você escolhe o cl
 - **Um cliente por vez:** os IPs internos se repetem entre clientes. Conectar outro fecha o túnel atual e as abas.
 - **Login SSH de quem usa:** na primeira abertura o app pede o usuário e a senha SSH. Cada pessoa usa o próprio login. A senha fica só no cofre do sistema: Gerenciador de Credenciais (Windows), Chaves (macOS) ou Secret Service/GNOME Keyring/KWallet (Linux).
 
+## Baixar
+
+Versão atual: **2.0.0**. As versões ficam em [Releases](https://github.com/fcarvalhosa17/Tun-Client/releases/latest).
+
+| Sistema | Arquivo |
+|---|---|
+| Windows 10/11 | [tunel-clientes-2.0.0-windows-setup.exe](https://github.com/fcarvalhosa17/Tun-Client/releases/download/v2.0.0/tunel-clientes-2.0.0-windows-setup.exe) |
+| Linux (Debian/Ubuntu) e macOS | [tunel-clientes-2.0.0-linux-macos.zip](https://github.com/fcarvalhosa17/Tun-Client/releases/download/v2.0.0/tunel-clientes-2.0.0-linux-macos.zip) |
+
 ## Instalar
 
 ### Windows
 
-Rode `tunel-clientes-<versão>-windows-setup.exe`. Não pede administrador. Sem assinatura de código, o SmartScreen pode mostrar "Editor desconhecido": clique em **Mais informações** e depois em **Executar assim mesmo**.
+Baixe e rode `tunel-clientes-<versão>-windows-setup.exe`. Não pede administrador. Sem assinatura de código, o SmartScreen pode mostrar "Editor desconhecido": clique em **Mais informações** e depois em **Executar assim mesmo**.
 
 ### Linux (Debian 12+, Ubuntu 22.04+) e macOS
 
 Use o `tunel-clientes-<versão>-linux-macos.zip`. Ele traz o app e um instalador em Python que monta tudo na própria máquina, só para o seu usuário:
 
 ```
-unzip tunel-clientes-<versão>-linux-macos.zip
-cd tunel-clientes-<versão>
+curl -LO https://github.com/fcarvalhosa17/Tun-Client/releases/download/v2.0.0/tunel-clientes-2.0.0-linux-macos.zip
+unzip tunel-clientes-2.0.0-linux-macos.zip
+cd tunel-clientes-2.0.0
 python3 instalar.py
 ```
 
